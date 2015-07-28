@@ -1,0 +1,49 @@
+/****************************************
+* styles pour affichage masonry test 1
+****************************************/
+
+.pp-container {
+	margin: 5px;
+	width: 100% ;
+}
+
+/* Makes two columns */
+.pp-item {
+	width: 30%;
+	border: #ddd solid 2px ;
+	margin-bottom: 5px; 
+	padding: 1%;
+}
+
+.gutter-sizer {
+	/* see http://codepen.io/desandro/pen/BAJKn */
+	/* will not change using the inspector in the navigator */
+	width: 0.7%;
+}
+
+.pp-item article {
+	margin-bottom: 0;
+}
+
+.pp-item .entry-title a {
+    text-decoration: none;
+	color: #6200ea ;
+	font-size: 80%;
+    display: inline-block;
+}
+
+.pp-item  h3.entry-title  {
+	/* display: inline-block; */
+	margin-bottom: 10px;
+}
+
+.pp-item .thumbnail {
+	max-width: 95% ;
+	margin: 0 auto 10px;
+	max-height: 100%;
+    float: none;
+}
+
+.pp-item .entry-meta{
+	margin-bottom: 0px;
+}

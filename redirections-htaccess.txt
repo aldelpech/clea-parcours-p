@@ -1,0 +1,19 @@
+# a placer juste avant # BEGIN WordPress
+
+#USER added 301 redirects
+# old trashed pages 
+Redirect 301 /auto-evaluation/ /lean-management-amelioration-continue-guide/
+Redirect 301 /reduction-delai/ /pme-reduire-les-delais/
+Redirect 301 /fiches-outil/ /lean-amelioration-continue-outils/
+Redirect 301 /bon-niveau-de-stock/ /index.php?cat=59
+Redirect 301 /qualite-valeur-clients/ /lean-management-amelioration-continue-guide/
+Redirect 301 /urgence-mieux-anticiper/ /index.php?cat=59
+Redirect 301 /salaries-motives-autonomes/ /index.php?cat=64
+Redirect 301 /eliminer-gaspillages-tresorie-surfaces-machines/ /index.php?cat=59
+Redirect 301 /ameliorer-productivite-entreprise/ /index.php?cat=59
+Redirect 301 /mener-demarche-lean-en-production/ /lean-management-amelioration-continue-guide/
+Redirect 301 /mener-demarche-lean-office-services/ /lean-management-amelioration-continue-guide/
+Redirect 301 /manager-mieux/ /index.php?cat=67 
+Redirect 301 /lean-management/ /lean-management-amelioration-continue-guide/
+Redirect 301 /bien-manager-des-pistes-pour-etre-un-meilleur-manageur/ /mieux-manager-comment-devenir-un-meilleur-manageur/
+#END USER added 301 redirect
