@@ -51,6 +51,7 @@ get_header(); // Loads the header.php template. ?>
 				'post__not_in' => $do_not_duplicate,
 				'paged' 			=> $paged, 
 				'category__not_in'	=> '72', /* exclude category "AIDE" */
+				'post_status' => 'publish', /* show only published posts */
 			)
 		); ?>
 
@@ -64,21 +65,29 @@ get_header(); // Loads the header.php template. ?>
 				
 					<article id="post-<?php the_ID(); ?>" class="<?php hybrid_entry_class(); ?>">
 
-							<?php if ( current_theme_supports( 'get-the-image' ) ) get_the_image( array( 'meta_key' => 'Thumbnail', 'size' => 'thumbnail' ) ); ?>
+							<?php if ( current_theme_supports( 'get-the-image' ) ) get_the_image( array( 'meta_key' => 'Thumbnail', 'size' => 'medium' ) ); ?>
 
+							<div class="categorie">
+							<span class="categories"><?php the_category(', '); ?></span>
+							</div>
 							<header class="entry-header">
 								<?php echo apply_atomic_shortcode( 'entry_title', '[entry-title tag="h3"]' ); ?>
-								<?php echo apply_atomic_shortcode( 'entry_byline', '<div class="entry-byline">' . __( 'Publié le [entry-published] [entry-edit-link before=" | "]', 'unique' ) . '</div>' ); ?>
+								<?php // echo apply_atomic_shortcode( 'entry_byline', '<div class="entry-byline">' . __( 'Publié le [entry-published] [entry-edit-link before=" | "]', 'unique' ) . '</div>' ); ?>
 							</header><!-- .entry-header -->
 
 							<div class="entry-summary">
 								<?php the_excerpt(); ?>
 							</div><!-- .entry-summary -->
 
-							<p class="entry-meta">
-								<span class="categories"><?php _e('Posted in', 'example'); ?> <?php the_category(', '); ?></span>
-								<?php the_tags('<span class="tags"> <span class="sep">|</span> ' . __('Tagged', 'example') . ' ', ', ', '</span>'); ?> 
-								<span class="sep">|</span> <?php comments_popup_link(__('Leave a response', 'example'), __('1 Response', 'example'), __('% Responses', 'example'), 'comments-link', __('Comments closed', 'example')); ?> 
+								<p class="entry-meta">
+								<span class="categories">  </span>
+								<?php echo apply_atomic_shortcode( 'entry_byline', '<span class="entry-byline">' . __( '[entry-published] [entry-edit-link before=" | "]', 'unique' ) . '</span>' ); ?>
+								<!--
+								<span class="categories"><?php // _e('Posted in', 'example'); ?> <?php // the_category(', '); ?></span>
+								<?php // the_tags('<span class="tags"> <span class="sep">|</span> ' . __('Tagged', 'example') . ' ', ', ', '</span>'); ?> 
+								
+								<span class="sep">|</span> <?php // comments_popup_link(__('Leave a response', 'example'), __('1 Response', 'example'), __('% Responses', 'example'), 'comments-link', __('Comments closed', 'example')); ?>  
+								-->
 							</p>							
 					</article><!-- .hentry -->
 					<div class="clearfix"></div>

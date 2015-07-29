@@ -11,39 +11,137 @@
 .pp-item {
 	width: 30%;
 	border: #ddd solid 2px ;
-	margin-bottom: 5px; 
-	padding: 1%;
+	margin-bottom: 15px;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	background-color: #f6f6eb;
+	/* padding: 1%; */
+	/* -ms-transform: skewX(-5deg); /* IE 9 */
+    /* -webkit-transform: skewX(-5deg); /* Safari */
+    /* transform: skewX(-5deg); /* Standard syntax */
 }
 
 .gutter-sizer {
 	/* see http://codepen.io/desandro/pen/BAJKn */
 	/* will not change using the inspector in the navigator */
-	width: 0.7%;
+	width: 1.2%;
+}
+
+.pp-item header {
+	
+}
+
+.pp-item .entry-summary {
+	font-size: 85%;
+    line-height: 1.4;
+	padding: 0 5px 5px 5px;
+}
+
+.pp-item .entry-meta{
+	margin-bottom: 5px;
+	
 }
 
 .pp-item article {
-	margin-bottom: 0;
+	margin-bottom: 2px;
+	padding-bottom: 5px;
 }
 
 .pp-item .entry-title a {
     text-decoration: none;
-	color: #6200ea ;
-	font-size: 80%;
+	color: #fa5c5d ;
+	font-size: 70%;
     display: inline-block;
+	padding: 8px;
 }
 
 .pp-item  h3.entry-title  {
-	/* display: inline-block; */
-	margin-bottom: 10px;
+	margin-bottom: 6px;
+    margin-top: 6px;
+    line-height: 1.4;
+	font-weight: 600;
 }
 
 .pp-item .thumbnail {
-	max-width: 95% ;
-	margin: 0 auto 10px;
+	max-width: 100% ;
+	margin: 0 ;
 	max-height: 100%;
     float: none;
 }
 
-.pp-item .entry-meta{
-	margin-bottom: 0px;
+
+.pp-item article a img {
+	padding: 0 ;
+    background: none ;
+    border: none ;
+	border-radius: 15px 15px 0 0;
+	-moz-border-radius: 15px 15px 0 0;
+	-webkit-border-radius: 15px 15px 0 0;
+	margin-bottom: 1%;
+}
+
+.pp-item .categories {
+	background-color: #fa5c5d;
+	border-radius: 0 15px 15px 0;
+	-moz-border-radius: 0 15px 15px 0;
+	-webkit-border-radius: 0 15px 15px 0;
+	padding: 8px;
+}
+
+
+.pp-item .categorie > span > a {
+	color: #f6f6eb;
+	font-size: 90%;
+	font-weight: 600 ;
+	text-decoration: none;
+	font-variant: small-caps;
+}
+
+.pp-item .categorie > span > a::after {
+	content: "\f061";
+	font-family: FontAwesome;
+	color: #f6f6eb;
+	margin-left: 6px;
+	margin-right: 6px;
+}
+
+.pp-item .categories:hover,
+.pp-item .categorie > span > a:hover,
+.pp-item .categorie > span > a:hover::after {
+	color: #fa5c5d ;
+	background-color: #f6f6eb;
+}
+
+.pp-item .categorie  {
+	position: relative;
+    top: -20px;
+}
+	
+
+.pp-item .entry-byline {
+    margin-bottom: 2%;
+    margin-left: 1%;
+}
+
+
+
+/****************************************
+* styles pour les essais de couleur
+****************************************/
+
+.col-2 {
+	display: inline-block;
+	padding: 8px;
+	border: 2px solid #ddd;
+	width: 100%;
+    margin-bottom: 10px;
+}
+
+.column {
+	display: inline-block;
+    width: 45%;
+    float: left;
+    margin-left: 10px;
+    padding: 10px;
 }
