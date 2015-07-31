@@ -155,11 +155,10 @@
 * http://demosthenes.info/blog/825/Pinterest-Style-Column-Layout-In-Pure-CSS
 ****************************************/
 
-
+/* 
 #masonry {
 
 }
-
 
 #got-gridbox {
 	column-width: 320px;
@@ -191,6 +190,7 @@
 	/* float: right; */
 }
 
+/*
 div#got-gridbox:hover figure:not(:hover) { opacity: 0.4; }
 
 @media screen and (max-width: 750px) {
@@ -198,7 +198,7 @@ div#got-gridbox:hover figure:not(:hover) { opacity: 0.4; }
 #got-gridbox figure { width: 100%; }
 }
 
-
+*/
 /*
 #got-gridbox .entry-summary {
 	font-size: 85%;
@@ -270,3 +270,80 @@ div#got-gridbox:hover figure:not(:hover) { opacity: 0.4; }
 }
 
 */
+
+
+/****************************************************
+* masonry styles
+* source http://w3bits.com/css-masonry/
+****************************************************/
+
+@media only screen and (min-width: 760px) {
+	.flexbox-list {		/* sidebar must have space */
+		float: left;
+		width: 63.265%;
+	}
+}
+
+.masonry {			/* Masonry container */
+    margin: 1.5em 0;
+    padding: 0;
+    -moz-column-gap: 1.5em;
+    -webkit-column-gap: 1.5em;
+    column-gap: 1.5em;
+    font-size: .85em;
+}
+
+.item {				/* Masonry bricks or child elements */
+    display: inline-block;
+    background: #fff;
+    padding: 1em;
+    margin: 0 0 1.5em;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-shadow: 2px 2px 4px 0 #ccc;
+}
+
+.item pre {
+    white-space: pre-wrap;
+	padding: 5px;
+}
+
+@media only screen and (min-width: 400px) {
+    .masonry {
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        column-count: 1;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .masonry {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .masonry {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    .masonry {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .wrapper {
+        width: 1260px;
+    }
+}

@@ -14,9 +14,28 @@ get_header(); // Loads the header.php template. ?>
 	</section>
 	<!-- End featured area. -->
 
+	<?php get_sidebar( 'primary' ); // Loads the sidebar-primary.php template. ?>
 	<section class="flexbox-list">
 		<h3>Version masonry layout with flexbox</h3>	
-		<div id="masonry" class="row">
+		<div class="masonry">
+			<div class="item">
+				<h2>Attention</h2>
+				<p>see http://w3bits.com/css-masonry/<p>
+				<p>As CSS columns are supported by modern browsers only, you may also consider adding JavaScript fallbacks to make it work on older browsers. We can add a fallback to our masonry by making use of jQuery Masonry plugin.<p>
+
+				<p>Following is the workaround to call jQuery Masonry as a fallback to our CSS masonry in IE9 or below:<p>
+
+				<!-- will render -->
+				<!--[if lte IE 9]>
+				<script src="masonry.pkgd.min.js"></script>
+				<![endif]-->
+				<!-- used http://www.freeformatter.com/html-escape.html#ad-output -->
+				<pre><code>
+				&lt;!--[if lte IE 9]&gt;
+				&lt;script src=&quot;masonry.pkgd.min.js&quot;&gt;&lt;/script&gt;
+				&lt;![endif]--&gt;
+				</code></pre>
+			</div>
 			<!-- voir http://demosthenes.info/blog/844/Easy-Masonry-Layout-With-Flexbox -->
 				<!-- Begin excerpts area. -->
 		<?php 
@@ -56,24 +75,25 @@ get_header(); // Loads the header.php template. ?>
 
 			<?php while ( $loop->have_posts() ) : $loop->the_post(); $do_not_duplicate[] = get_the_ID();  ?>
 
-				<div id="got-gridbox">
+				<div class="item">
 					<figure>
 						<?php if ( current_theme_supports( 'get-the-image' ) ) get_the_image( array( 'meta_key' => 'Thumbnail', 'size' => 'medium' ) ); ?>
-						<div class="categorie">
-								<span class="categories"><?php the_category(', '); ?></span>
-						</div>
-						<figcaption>
-							<header class="entry-header">
-								<?php echo apply_atomic_shortcode( 'entry_title', '[entry-title tag="h3"]' ); ?>
-							</header><!-- .entry-header -->
-							<div class="entry-summary">
-								<?php the_excerpt(); ?>
-							</div><!-- .entry-summary -->
-							<p class="entry-meta">
-							<span class="categories">  </span>
-							<?php echo apply_atomic_shortcode( 'entry_byline', '<span class="entry-byline">' . __( '[entry-published] [entry-edit-link before=" | "]', 'unique' ) . '</span>' ); ?>
-						</figcaption>
 					</figure>
+					<div class="categorie">
+							<span class="categories"><?php the_category(', '); ?></span>
+					</div>
+					<figcaption>
+						<header class="entry-header">
+							<?php echo apply_atomic_shortcode( 'entry_title', '[entry-title tag="h3"]' ); ?>
+						</header><!-- .entry-header -->
+						<div class="entry-summary">
+							<?php the_excerpt(); ?>
+						</div><!-- .entry-summary -->
+						<p class="entry-meta">
+						<span class="categories">  </span>
+						<?php echo apply_atomic_shortcode( 'entry_byline', '<span class="entry-byline">' . __( '[entry-published] [entry-edit-link before=" | "]', 'unique' ) . '</span>' ); ?>
+					</figcaption>
+					
 					<!-- <div class="clearfix"></div> -->
 				</div>	
 						
@@ -98,7 +118,7 @@ get_header(); // Loads the header.php template. ?>
 		<?php wp_reset_query(); ?>
 
 	</section>
-	
+
 	
 	<section class="list-articles">
 	<h3>Version masonry (jquery) : Les derniers articles du blog</h3>	
@@ -227,6 +247,6 @@ get_header(); // Loads the header.php template. ?>
 	
 
 
-<?php get_sidebar( 'primary' ); // Loads the sidebar-primary.php template. ?>
+
 
 <?php get_footer(); // Loads the footer.php template. ?>
