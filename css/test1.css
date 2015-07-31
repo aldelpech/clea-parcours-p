@@ -187,6 +187,7 @@ div.item:hover figure:not(:hover) {
     margin-left: 1%;
 }
 
+
 /***********************************************************
 * style featured area
 ***********************************************************/
@@ -199,14 +200,6 @@ div.item:hover figure:not(:hover) {
     padding: 9px;
 }
 
-
-
-
-/* 
-flexbox-horizontal
-hor-masonry
-hor-item
-*/
 
 /****************************************************
 * horizontal items in masonry styles
@@ -225,13 +218,17 @@ hor-item
 .hor-item {				/* Masonry bricks or child elements */
     display: inline-block;
     background: #fff;
-    padding: 0;
     margin: 0 0 1.5em;
     width: 100%;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-shadow: 1px 1px 2px 0 #ccc;
+	border: 2px dotted #fa5c5d;
+    padding: 4px;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
 }
 
 /* responsive masonry  */
@@ -331,3 +328,119 @@ hor-item
     height: 170px;
     width: auto;
 }
+
+/* style items */
+
+.hor-item pre {
+    white-space: pre-wrap;
+	padding: 5px;
+}
+
+.hor-item  img { 
+	  height: 150px; 
+	  width: auto;
+	  float: left; 
+	  border-radius: 50%; 
+	  margin: 5px 15px 5px 0 ;
+	  -webkit-shape-outside: circle(40%);
+	  -webkit-shape-margin: 10px;
+	  shape-outside: circle(40%);
+		shape-margin: 10px;
+	  clip-path: circle(35%);
+	  transition: shape-outside 1s;
+}
+
+.hor-item img:hover{
+	-webkit-shape-outside: circle(45%);
+	-webkit-shape-margin: 1px;
+	shape-outside: circle(45%);
+    shape-margin: 1px;
+    height: 170px;
+    width: auto;
+}
+
+.hor-item a img {
+    padding: 0; 
+    background: none; 
+    border: 1px solid #fa5c5d;
+}
+
+.hor-item .entry-summary {
+	font-size: 95%;
+    line-height: 1.4;
+	padding: 0 5px 5px 5px;
+}
+
+.hor-item .entry-meta{
+	margin-bottom: 5px;
+	
+}
+
+.hor-item .entry-title a {
+    text-decoration: none;
+	color: #fa5c5d ;
+	font-size: 85%;
+	padding: 0;
+}
+
+.hor-item  h3.entry-title  {
+	margin-bottom: 6px;
+    margin-top: 6px;
+    line-height: 1.4;
+	font-weight: 600;
+}
+
+.hor-item .categories {
+	background-color: #fa5c5d;
+	border-radius: 15px 0 0 15px;
+	-moz-border-radius: 15px 0 0 15px;
+	-webkit-border-radius: 15px 0 0 15px;
+	padding: 8px;
+	float: right;
+	margin-right: -10px;
+}
+
+.hor-item .categories  a {
+	color: #f6f6eb;
+	font-size: 110%;
+	font-weight: 600 ;
+	text-decoration: none;
+	font-variant: small-caps;
+}
+
+.hor-item .categories a::after {
+	content: "\f061";
+	font-family: FontAwesome;
+	color: #f6f6eb;
+	margin-left: 6px;
+	margin-right: 6px;
+}
+
+.hor-item .categories:hover,
+.hor-item .categories a:hover,
+.hor-item .categories a:hover::after {
+	color: #fa5c5d ;
+	background-color: #f6f6eb;
+}
+
+.hor-item .entry-byline {
+	display:inline-block;
+    line-height: 45px;
+    height: 45px;
+	margin-bottom: 0 !important;
+    margin-left: -15px;
+}
+
+.hor-item .entry-byline::before{
+   content: '';
+   display: inline-block;
+   height:45px;
+   width:30px;
+   border-radius: 0 50px 50px 0;
+   -moz-border-radius: 0 50px 50px 0;
+   -webkit-border-radius: 0 50px 50px 0;
+   background-color: #fa5c5d;
+    vertical-align: bottom;
+    margin-right: 10px;
+}
+

@@ -32,26 +32,10 @@ get_header(); // Loads the header.php template. ?>
 				<![endif]-->
 				<!-- used http://www.freeformatter.com/html-escape.html#ad-output -->
 				<pre><code>
-				&lt;!--[if lte IE 9]&gt;
-				&lt;script src=&quot;masonry.pkgd.min.js&quot;&gt;&lt;/script&gt;
-				&lt;![endif]--&gt;
+				&lt;!--[if lte IE 9]&gt;&lt;script src=&quot;masonry.pkgd.min.js&quot;&gt;&lt;/script&gt;&lt;![endif]--&gt;
 				</code></pre>
 			</div>
-			<div class="hor-item">
-				<div class="demo user-profile">
-				  <img src="http://api.randomuser.me/0.3.2/portraits/men/7.jpg" alt="" />
-				  <!-- <h3>John Doe</h3> -->
-				  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum itaque nam blanditiis eveniet enim eligendi quae adipisci? <p>Assumenda blanditiis voluptas tempore porro quibusdam beatae deleniti quod asperiores sapiente dolorem error! Quo nam quasi soluta reprehenderit laudantium optio ipsam ducimus consequatur enim fuga quibusdam mollitia nesciunt modi.</p>
-				  <p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla ipsam officia autem tenetur odit reprehenderit amet. Ut voluptatibus eum dolorem suscipit ipsa veniam animi dolore officia sunt magni assumenda vitae!
 
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium repellat cumque beatae aliquam earum odio. Earum corporis necessitatibus minus aut culpa tempore deleniti laudantium repellat autem consequuntur est quos doloribus.
-				  </p>
-				 
-				</div>
-				<footer>Demonstration by Sara Soueidan. <a href="http://alistapart.com/article/css-shapes-101">See article</a> on A List Apart.</footer>
-		</div>
-			
 			<!-- voir http://demosthenes.info/blog/844/Easy-Masonry-Layout-With-Flexbox -->
 				<!-- Begin excerpts area. -->
 		<?php 
@@ -92,27 +76,17 @@ get_header(); // Loads the header.php template. ?>
 			<?php while ( $loop->have_posts() ) : $loop->the_post(); $do_not_duplicate[] = get_the_ID();  ?>
 
 				<div class="hor-item">
-					<figure>
-						<?php if ( current_theme_supports( 'get-the-image' ) ) get_the_image( array( 'meta_key' => 'Thumbnail', 'size' => 'medium' ) ); ?>
-					</figure>
-					<div class="categorie">
-							<span class="categories"><?php the_category(', '); ?></span>
-					</div>
-					<figcaption>
-						<header class="entry-header">
-							<?php echo apply_atomic_shortcode( 'entry_title', '[entry-title tag="h3"]' ); ?>
-						</header><!-- .entry-header -->
-						<div class="entry-summary">
-							<?php the_excerpt(); ?>
-						</div><!-- .entry-summary -->
-						<p class="entry-meta">
-						<span class="categories">  </span>
+					<?php if ( current_theme_supports( 'get-the-image' ) ) get_the_image( array( 'meta_key' => 'Thumbnail', 'size' => 'thumbnail' ) ); ?>
+					<header class="entry-header">
+						<?php echo apply_atomic_shortcode( 'entry_title', '[entry-title tag="h3"]' ); ?>
+					</header><!-- .entry-header -->
+					<span class="entry-summary"><?php echo(get_the_excerpt()); ?></span>
+					<p class="entry-meta">
 						<?php echo apply_atomic_shortcode( 'entry_byline', '<span class="entry-byline">' . __( '[entry-published] [entry-edit-link before=" | "]', 'unique' ) . '</span>' ); ?>
-					</figcaption>
-					
-					<!-- <div class="clearfix"></div> -->
+						<span class="categories"><?php the_category(', '); ?></span>
+					</p>
 				</div>	
-						
+				
 			<?php endwhile; ?>
 
 		<?php endif; ?>
@@ -153,9 +127,7 @@ get_header(); // Loads the header.php template. ?>
 				<![endif]-->
 				<!-- used http://www.freeformatter.com/html-escape.html#ad-output -->
 				<pre><code>
-				&lt;!--[if lte IE 9]&gt;
-				&lt;script src=&quot;masonry.pkgd.min.js&quot;&gt;&lt;/script&gt;
-				&lt;![endif]--&gt;
+				&lt;!--[if lte IE 9]&gt;&lt;script src=&quot;masonry.pkgd.min.js&quot;&gt;&lt;/script&gt;&lt;![endif]--&gt;
 				</code></pre>
 			</div>
 			<!-- voir http://demosthenes.info/blog/844/Easy-Masonry-Layout-With-Flexbox -->
