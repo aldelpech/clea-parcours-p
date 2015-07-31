@@ -1,192 +1,3 @@
-/****************************************************
-* masonry styles
-* source http://w3bits.com/css-masonry/
-****************************************************/
-
-.masonry {			/* Masonry container */
-    margin: 1.5em 0;
-    padding: 0;
-    -moz-column-gap: 1.5em;
-    -webkit-column-gap: 1.5em;
-    column-gap: 1.5em;
-    font-size: .85em;
-}
-
-.item {				/* Masonry bricks or child elements */
-    display: inline-block;
-    background: #fff;
-    padding: 0;
-    margin: 0 0 1.5em;
-    width: 100%;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-shadow: 1px 1px 2px 0 #ccc;
-}
-
-/* responsive masonry  */
-
-@media only screen and (min-width: 400px) {
-    .masonry {
-        -moz-column-count: 1;
-        -webkit-column-count: 1;
-        column-count: 1;
-    }
-}
-
-@media only screen and (min-width: 760px) {
-    .masonry {
-        -moz-column-count: 2;
-        -webkit-column-count: 2;
-        column-count: 2;
-    }
-
-	.flexbox-list {		/* sidebar must have space */
-		float: left;
-		width: 63.265%;
-		margin-top: 15px;
-	}
-}
-
-@media only screen and (min-width: 900px) {
-    .masonry {
-        -moz-column-count: 2;
-        -webkit-column-count: 2;
-        column-count: 2;
-    }
-}
-
-@media only screen and (min-width: 1100px) {
-    .masonry {
-        -moz-column-count: 3;
-        -webkit-column-count: 3;
-        column-count: 3;
-    }
-}
-
-@media only screen and (min-width: 1280px) {
-    #container {
-        max-width: 1260px !important ;
-    }
-	
-	.flexbox-list {		/* sidebar must have space */
-		float: left;
-		width: 74.265%;
-		margin-top: 15px;
-	}
-	
-	#sidebar-primary, .layout-2c-l #sidebar-secondary {
-		float: right;
-		width: 24.63% !important;
-	}
-	
-}
-
-/* style items */
-
-.item pre {
-    white-space: pre-wrap;
-	padding: 5px;
-}
-
-.item figure {
-	/* background: #fefefe;
-	border: 2px solid #fcfcfc;
-	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
-	*/
-	margin: 0 0 15px;
-	padding: 0; 
-	padding-bottom: 10px;
-	transition: opacity .4s ease-in-out;
-	column-break-inside: avoid;
-	display: inline-block;
-}
-
-.item figure img { 
-	width: 100%; height: auto;
-	/* border-bottom: 1px solid #ccc; */
-	padding-bottom: 15px;
-	margin-bottom: 5px;
-}
-
-.item a img {
-    padding: 0; 
-    background: none; 
-    border: none ;
-}
-
-div.item:hover figure:not(:hover) { 
-	opacity: 0.4; 
-}
-
-.item .entry-summary {
-	font-size: 95%;
-    line-height: 1.4;
-	padding: 0 5px 5px 5px;
-}
-
-.item .entry-meta{
-	margin-bottom: 5px;
-	
-}
-
-.item .entry-title a {
-    text-decoration: none;
-	color: #fa5c5d ;
-	font-size: 85%;
-    display: inline-block;
-	padding: 8px;
-}
-
-.item  h3.entry-title  {
-	margin-bottom: 6px;
-    margin-top: 6px;
-    line-height: 1.4;
-	font-weight: 600;
-}
-
-.item .categories {
-	background-color: #fa5c5d;
-	border-radius: 0 15px 15px 0;
-	-moz-border-radius: 0 15px 15px 0;
-	-webkit-border-radius: 0 15px 15px 0;
-	padding: 8px;
-}
-
-.item .categorie > span > a {
-	color: #f6f6eb;
-	font-size: 110%;
-	font-weight: 600 ;
-	text-decoration: none;
-	font-variant: small-caps;
-}
-
-.item .categorie > span > a::after {
-	content: "\f061";
-	font-family: FontAwesome;
-	color: #f6f6eb;
-	margin-left: 6px;
-	margin-right: 6px;
-}
-
-.item .categories:hover,
-.item .categorie > span > a:hover,
-.item .categorie > span > a:hover::after {
-	color: #fa5c5d ;
-	background-color: #f6f6eb;
-}
-
-.item .categorie  {
-	position: relative;
-    top: -40px;
-}
-	
-
-.item .entry-byline {
-    margin-bottom: 2%;
-    margin-left: 1%;
-}
-
 
 /***********************************************************
 * style featured area
@@ -246,13 +57,19 @@ div.item:hover figure:not(:hover) {
         -moz-column-count: 1;
         -webkit-column-count: 1;
         column-count: 1;
+		/* sidebar must have space */
+		float: left;
+		width: 63.265%;
+		margin-top: 15px;		
     }
 
-	.flexbox-horizontal {		/* sidebar must have space */
+/* 
+	.flexbox-horizontal {		
 		float: left;
 		width: 63.265%;
 		margin-top: 15px;
 	}
+*/
 }
 
 @media only screen and (min-width: 900px) {
@@ -276,7 +93,7 @@ div.item:hover figure:not(:hover) {
         max-width: 1260px !important ;
     }
 	
-	.flexbox-horizontal {		/* sidebar must have space */
+	.hor-masonry {		/* sidebar must have space */
 		float: left;
 		width: 74.265%;
 		margin-top: 15px;
@@ -287,46 +104,6 @@ div.item:hover figure:not(:hover) {
 		width: 24.63% !important;
 	}
 	
-}
-
-/******************************************************
-* horizontal style test 
-* http://alistapart.com/article/css-shapes-101
-* http://codepen.io/SaraSoueidan/pen/af3d2ae9fbe4205035822e4878fb1f54/
-******************************************************/
-
-.demo {
-  margin: 50px auto;
-  width: 100%;
-  font-family: "Open Sans";
-}
-
-.hor-item footer {
-  background-color: #eee;
-  text-align: center;
-  padding: 1em;
-}
-.user-profile img {
-  height: 150px; 
-  width: auto;
-  float: left; 
-  border-radius: 50%; 
-  margin-right: 15px;
-  -webkit-shape-outside: circle(35%);
-  -webkit-shape-margin: 15px;
-  shape-outside: circle(35%);
-  shape-margin: 15px;
-  clip-path: circle(45%);
-  transition: shape-outside 1s;
-}
-
-.user-profile img:hover{
-	-webkit-shape-outside: circle(45%);
-	-webkit-shape-margin: 1px;
-	shape-outside: circle(45%);
-    shape-margin: 1px;
-    height: 170px;
-    width: auto;
 }
 
 /* style items */
