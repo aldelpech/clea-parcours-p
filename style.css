@@ -280,5 +280,107 @@ tbody tr {
 	font-weight: normal;
 }
 
+.entry-content a {
+    color: #fa5c5d !important;
+}
+
+/* bullet points */
+/* bullets replaced with a font awesome icon */
+#content ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+#content ul li {
+  position: relative;
+  padding-left: 20px;
+}
+
+#content li {
+  margin-bottom: 10px
+}
+
+#content ul li:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: FontAwesome;
+  content: "\f138";  /* \f046  */
+  color: #fa5c5d;
+}
+
+/* same for nested lists */
+#content ul li li {
+  position: relative;
+  padding-left: 20px;
+}
+
+#content li li {
+  font-size: 95%;
+  line-height: 1;
+}
+
+#content ul li li:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: FontAwesome;
+  content: "\f046";  /* \f138  */
+  color: #fa5c5d;
+}
+
+#content li li:first-child {	/*first li */
+  margin-top: 10px;
+}
+
+abbr[title], time[title], acronym[title] {
+    background-color: #f6f6eb;
+}
+
+figure {
+	padding: 5px ;
+    border: 1px solid #fa5c5d ;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    overflow: hidden;
+}
+
+figure img, 
+figure.alignnone,
+img {
+	padding: none !important;
+	border: none !important;
+}
+
+
+img {
+    background: none !important;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+}
+
+img.alignleft, 
+img.alignright,
+img.aligncenter {
+	padding: 5px !important;
+    border: 1px solid #fa5c5d !important ;
+}
+
+figcaption {
+	width: 100% !important;
+	background: none !important;
+    font-style: italic;
+    text-align: center !important;
+    position: static !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    opacity: 1 !important;
+    color: red !important;
+    font-size: 0.95rem !important;
+}
+
+
 
 
