@@ -202,6 +202,7 @@ blockquote{
 	/*Font*/
 	font-size: 95%;
 	text-align: justify;
+	font-family: 'Handlee', cursive;
   
 	/*Borders - (Optional)*/
 	border-left: 2px solid #fa5c5d;
@@ -257,14 +258,27 @@ blockquote cite {
 	box-shadow: 2px 2px 15px #78909C;	
 }
 
-.pp-pullquote .fa {
-	font-size: 25px;
+.pp-pullquote::before{
+	content: "\f08d";
+    
+	/*Font*/
+	font-family: FontAwesome;
+    font-size: 25px;
     font-weight: normal;
-    color: #910101;
-	margin-right: 5px;
-    -webkit-transform: rotate(20deg);
-    transform: rotate(20deg);
+	color: #910101;
+    margin-right: 5px;
+    display: inline-block;
+    -webkit-transition: all 300ms 0s ease-in-out;
+    transition: all 300ms 0s ease-in-out;
+	-webkit-transform: rotate(380deg);
+    transform: rotate(380deg);
 }
+
+.pp-pullquote::after{
+  /*Reset to make sure*/
+  content: "";
+}
+
 
 th, td, table {
     border: none !important;
@@ -286,9 +300,11 @@ tbody tr {
 
 /* bullet points */
 /* bullets replaced with a font awesome icon */
+
 #content ul {
   list-style-type: none;
   padding-left: 20px;
+  margin: 0 0 15px 0.5em;
 }
 
 #content ul li {
@@ -381,6 +397,119 @@ figcaption {
     font-size: 0.95rem !important;
 }
 
+/* mise en avant */
 
+.pp-forward {
+	display: inline-block;
+    background-color: #ffcc00;
+    color: #910101;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border: 3px solid #910101;
+    padding: 10px;
+    margin-bottom: 10px;
+    letter-spacing: 0.3px;
+}
+.pp-forward::before{
+	content: "\f12a";  /* eye */
+    display: inline-block;    
+	/*Font*/
+	font-family: FontAwesome;
+    font-size: 25px;
+    font-weight: normal;
+	color: #910101 ;
+    margin-right: 5px;
+	padding: 1.5%;
+}
+
+.pp-forward::after{
+  /*Reset to make sure*/
+  content: "";
+}
+
+.pp-alert {
+	display: inline-block;
+    background-color: rgba(250, 92, 93, 0.8);
+    color: #ffffff;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border: 3px solid #ffcc00;
+    padding: 10px;
+    margin-bottom: 10px;
+    letter-spacing: 0.3px;
+}
+.pp-alert::before{
+	content: "\f06e ";  /* exclamation */
+    display: inline-block;    
+	/*Font*/
+	font-family: FontAwesome;
+    font-size: 25px;
+    font-weight: normal;
+	color: #f6f6eb;
+    margin-right: 5px;
+	padding: 1.5%;
+}
+
+.pp-alert::after{
+  /*Reset to make sure*/
+  content: "";
+}
+
+.pp-comment {
+	display: inline-block;
+    background-color: #f6f6eb;
+    color: #910101;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border: 3px solid #ffcc00;
+    padding: 10px;
+    margin-bottom: 10px;
+    letter-spacing: 0.3px;
+}
+
+.pp-comment::before {
+	content: "\f27a";  /*commenting */
+    display: inline-block;    
+	/*Font*/
+	font-family: FontAwesome;
+    font-size: 25px;
+    font-weight: normal;
+	color: #910101;
+    margin-right: 5px;
+	padding: 1.5%;
+}
+
+.pp-comment::after{
+  /*Reset to make sure*/
+  content: "";
+}
+
+hr {
+	background-color: #f6f6eb;
+    border-top: 3px dashed #fa5c5d ;
+}
+
+a:hover img, a:hover .avatar {
+    box-shadow: none;
+	-webkit-animation: tada 1s;
+    animation: tada 1s;
+	-moz-animation: tada 1s;
+	-o-animation: tada 1s;
+}
+
+/* identifier les liens qui renverront vers un autre onglet */
+a[target="_blank"]::after {
+content: "\f08e";  /* external-link */
+    display: inline-block; 
+    font-family: FontAwesome;
+    font-size: 90%;
+    color: #fa5c5d;
+    text-decoration: underline;
+    width: 17px;
+    text-align: right;
+}
 
 
