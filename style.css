@@ -23,8 +23,11 @@
 }
 
 #site-description {
-  margin-left: 10px;
-  float: left;
+	margin-left: 20px;
+    float: left;
+    max-width: 40%;
+    position: relative;
+    top: 48px;
 }
 
 @media only screen and (min-width: 760px) {
@@ -54,38 +57,56 @@
 /********************************************************** 
 réglage couleurs
 ***********************************************************/
+/* bon choix de background discret et joli
+brushed-alum-dark.png
+climpek.png
+retina-wood.png
+stressed-linen.png
+*/
+
+body.custom-background {
+    background-image: url('images/retina-wood.png') !important;
+}
+
 #menu-primary li li:hover,
 #menu-primary li li:hover > a,
 #menu-primary li a:hover, 
 #menu-primary li:hover > a, 
 #menu-primary li.current-menu-item > a,
 #menu-secondary-has-children li a {
-	background-color: #cddc39;
+	background-color: #fa5c5d ;
 	text-decoration: none;
 	
 }
 
-
-
-#menu-secondary li a:active,
-#menu-secondary li.current-menu-item >a, 
-#menu-secondary li a:hover {
-	background-color: #643075 ; 			/* primary color */
-	color : #cddc39 ; 			/* secondary color */
+/* élimine le background défectueux des menus avec enfants ! */
+#menu-secondary {
+	background: #fa5c5d !important ;
+	border: 1px solid #fa5c5d; 
 }
+#menu-secondary li a:hover, 
+#menu-secondary li:hover >a, 
+#menu-secondary li a:active,
+#menu-secondary li.current-menu-item >a {
+	background: #f6f6eb !important ;
+	color: #fa5c5d;
+}
+/* FIN élimine le background défectueux des menus avec enfants ! */
+
+
+
 
 .page-numbers.current, 
 a.page-numbers:hover {
-	background-color: #643075 ; 	/* secondary color */
-	color: #cddc39 !important; 				/* primary color */
+	background-color: #ffcc00 ; 	/* secondary color */
+	color: #910101 !important; 		/* primary color */
 }
  
 .page-numbers, 
 .page-links a, 
 .loop-nav a {
-	background-color: #cddc39 ; /* primary color */
-	color : #643075; /* secondary color */
-
+	background-color: #f6f6eb ; 	/* primary color */
+	color : #910101; 				/* secondary color */
 }
 
 
@@ -98,15 +119,166 @@ a.page-numbers:hover {
 /* primary sidebar
 ****************************************/
 
+#sidebar-secondary .widget,
 #sidebar-primary .widget {
-	border: 1px solid #252525;
-	padding: 8px;
+	border: 2px solid #fa5c5d;
+    /* border-radius: 15px; */
+    /* -webkit-border-radius: 15px; */
+    /* -moz-border-radius: 15px; */
+    padding: 8px;
+    margin-bottom: 8px;
+    background: #f6f6eb;
 }
 
-#sidebar-primary .widget hr {
-	border-top: 2px dashed #252525;
-	width: 80%;
-	margin-right: auto ;
-	margin-left: auto ;
-	background-color: #bc101a;
+
+#sidebar-secondary .widget-title,
+#sidebar-primary .widget-title {
+    padding: 5px;
+    font-size: 1.125rem;
+    color: #fa5c5d;
+    background: none;
+    border-bottom: 1px solid #fa5c5d;
+	font-variant: small-caps;
+    font-weight: 600;
+    text-align: center;
+    text-align: -webkit-center;
 }
+
+.widget-search input[type="text"] {
+     color: #f6f6eb;
+    background: #f6f6eb;
+    border: 2px solid #fa5c5d;
+	border-right: none ;
+}
+
+.widget-search input[type="submit"] {
+    background-color: #fa5c5d;
+	height: 41px;
+   border: 2px solid #fa5c5d;
+	border-left: none ;   
+}
+
+.widget-search input[type="submit"]::before {
+	content: "\f09b";
+	font-family: FontAwesome;
+	color: #f6f6eb;
+}
+
+/*******************************************************
+* mise en page 
+* résultat sur http://testal.parcours-performance.com/test-mise-en-page/
+*******************************************************/
+
+h1, h2, h4, h6 {
+    color: #fa5c5d;
+}
+
+h1 {
+	text-transform: uppercase;
+}
+
+h2 {
+	margin: 25px 0;
+}
+
+h2, h3, h4 {
+	font-variant: small-caps;
+    font-weight: 600 !important;;
+}
+
+h5, h6 {
+	font-variant: small-caps;
+	border-bottom: 1px solid #78909C ;
+	padding-bottom: 7px;
+}
+
+blockquote{
+	display:block;
+	background: #fff;
+	padding: 15px 20px 15px 50px;
+	margin: 0 0 30px;
+	position: relative;
+  
+	/*Font*/
+	font-size: 95%;
+	text-align: justify;
+  
+	/*Borders - (Optional)*/
+	border-left: 2px solid #fa5c5d;
+	border-right: 2px solid #fa5c5d;
+  
+	/*Box Shadow - (Optional)*/
+	-moz-box-shadow: 2px 2px 15px #78909C;
+	-webkit-box-shadow: 2px 2px 15px #78909C;
+	box-shadow: 2px 2px 15px #78909C;
+}
+
+blockquote::before{
+	content: "\f10e";
+    
+	/*Font*/
+	font-family: FontAwesome;
+    font-size: 25px;
+    font-weight: normal;
+    color: #fa5c5d;
+	/*Positioning*/
+    position: absolute;
+    left: 10px;
+    top: 20px;
+}
+
+blockquote::after{
+  /*Reset to make sure*/
+  content: "";
+}
+
+blockquote p {
+	margin-bottom: 10px;
+}
+
+blockquote cite {
+	color: #263238;
+}
+    
+.pp-pullquote {
+	/*Borders - (Optional)*/
+	border-top: 2px solid #910101;
+	border-bottom: 2px solid #910101;
+	border-right: none !important;
+	color: #910101;
+	padding: 2% !important;
+    font-size: 85%;
+    line-height: 1.6;
+	background-color: #f6f6eb;
+  
+	/*Box Shadow - (Optional)*/
+	-moz-box-shadow: 2px 2px 15px #78909C;
+	-webkit-box-shadow: 2px 2px 15px #78909C;
+	box-shadow: 2px 2px 15px #78909C;	
+}
+
+.pp-pullquote .fa {
+	font-size: 25px;
+    font-weight: normal;
+    color: #910101;
+	margin-right: 5px;
+    -webkit-transform: rotate(20deg);
+    transform: rotate(20deg);
+}
+
+th, td, table {
+    border: none !important;
+}
+
+thead {
+	border-bottom: 2px solid #78909C;
+}
+
+tbody, 
+tbody tr {
+	border-bottom: 1px solid #78909C;
+	font-weight: normal;
+}
+
+
+

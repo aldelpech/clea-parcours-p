@@ -35,7 +35,7 @@ function clea_parcours_p_enqueue_styles() {
 }
 
 function clea_parcours_p_enqueue_scripts() {
-
+	
 	/* Enqueue the 'flexslider' script. */
 	if ( is_page_template( 'page/pp-front-page-template.php' ) ) {
 		wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/flexslider/flexslider.min.js' , array( 'jquery' ), '20120713', true );
