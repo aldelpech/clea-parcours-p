@@ -25,9 +25,11 @@
 #site-description {
 	margin-left: 20px;
     float: left;
-    max-width: 40%;
-    position: relative;
-    top: 48px;
+    max-width: 55%;
+    margin-left: 30px;
+    font-size: larger;
+    font-family: handlee, cursive !important;
+    color: #263238;
 }
 
 @media only screen and (min-width: 760px) {
@@ -357,49 +359,79 @@ abbr[title], time[title], acronym[title] {
     background-color: #f6f6eb;
 }
 
-figure {
-	padding: 5px ;
-    border: 1px solid #fa5c5d ;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    overflow: hidden;
-}
+/* Réglage des images */
+	figure {
+		padding: 5px ;
+		border: 1px solid #fa5c5d ;
+		border-radius: 10px;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		overflow: hidden;
+	}
 
-figure img, 
-figure.alignnone,
-img {
-	padding: none !important;
-	border: none !important;
-}
+	figure img, 
+	figure.alignnone,
+	img {
+		padding: none !important;
+		border: none !important;
+	}
 
 
-img {
-    background: none !important;
-    border-radius: 15px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-}
+	img {
+		background: none !important;
+		border-radius: 15px;
+		-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+	}
 
-img.alignleft, 
-img.alignright,
-img.aligncenter {
-	padding: 5px !important;
-    border: 1px solid #fa5c5d !important ;
-}
+	img.alignleft, 
+	img.alignright,
+	img.aligncenter {
+		padding: 5px !important;
+		border: 1px solid #fa5c5d !important ;
+	}
 
-figcaption {
-	width: 100% !important;
-	background: none !important;
-    font-style: italic;
-    text-align: center !important;
-    position: static !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    opacity: 1 !important;
-    color: red !important;
-    font-size: 0.95rem !important;
-}
+	figcaption {
+		width: 100% !important;
+		background: none !important;
+		font-style: italic;
+		text-align: center !important;
+		position: static !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		opacity: 1 !important;
+		color: red !important;
+		font-size: 0.95rem !important;
+	}
+
+	a:hover img, a:hover .avatar {
+		box-shadow: none;
+		-webkit-animation: tada 1s;
+		animation: tada 1s;
+		-moz-animation: tada 1s;
+		-o-animation: tada 1s;
+	}
+	
+	/* .img-inside est lié à la fonction jquery 
+	* qui permet de donner un style différent aux <a> links 
+	* selon que <img> inside ou pas */
+	.entry-content a.img-inside img {
+    /* margin-bottom: -30px; */
+	padding: 0;
+	}
+
+	.entry-content a.img-inside img.alignleft,
+	.entry-content a.img-inside img.alignright,
+	.entry-content a.img-inside img.aligncenter {
+		margin-bottom: 0;
+	}
+
+
+	.alignnone, {
+		margin: 0 !important;
+	}
+	
+	
 
 /* mise en avant */
 
@@ -496,54 +528,33 @@ hr {
     border-top: 3px dashed #fa5c5d ;
 }
 
-a:hover img, a:hover .avatar {
-    box-shadow: none;
-	-webkit-animation: tada 1s;
-    animation: tada 1s;
-	-moz-animation: tada 1s;
-	-o-animation: tada 1s;
-}
+
 
 /*************************************************************
 * identifier les liens qui renverront vers un autre onglet 
 * 
-* <a> links with <imf> inside need to be styled differently
+* <a> links with <img> inside need to be styled differently
 * see my codepen test http://codepen.io/aldelpech/pen/jPoMeZ
 * code enqueued in functions.php of my child theme
 *************************************************************/
 
-.entry-content a[target="_blank"]::after {
-	content: "\f08e";  /* external-link */
-    display: inline-block; 
-    font-family: FontAwesome;
-    font-size: 90%;
-    color: #fa5c5d;
-    text-decoration: underline;
-    width: 17px;
-    text-align: right;
-}
+	.entry-content a[target="_blank"]::after {
+		content: "\f08e";  /* external-link */
+		display: inline-block; 
+		font-family: FontAwesome;
+		font-size: 90%;
+		color: #fa5c5d;
+		text-decoration: underline;
+		width: 17px;
+		text-align: right;
+	}
 
-.entry-content a[target="_blank"].img-inside::after {
-    content: "";
-	display: inline-block; 
-}
+	.entry-content a[target="_blank"].img-inside::after {
+		content: "";
+		display: inline-block; 
+	}
 
-.entry-content a.img-inside img {
-    /* margin-bottom: -30px; */
-	padding: 0;
-}
+	/* Ces réglages provoquent des réglages sur les images également
+	* cf plus haut (partie images) */
 
-.entry-content a.img-inside img.alignleft,
-.entry-content a.img-inside img.alignright,
-.entry-content a.img-inside img.aligncenter {
-    margin-bottom: 0;
-}
 
-/* figure.external figcaption.wp-caption-text {
-    margin-top: 25px !important;
-}
-*/
-
-.alignnone, {
-	margin: 0 !important;
-}
