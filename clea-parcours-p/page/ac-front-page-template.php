@@ -7,32 +7,10 @@ $do_not_duplicate = array();
  
 get_header(); // Loads the header.php template. ?>
 
-	<section class="note">
-	<h4> essais de page d'accueil</h4>
-	<ul>
-	<li><a href="http://testal.parcours-performance.com/test-presentation-articles-n1/">Essai 1 avec "masonry" et gestion des pages</a></li>
-	</ul>
-	</section>
-
 	<!-- Begin featured area. --->
 	<section class="feature">
-
-		<p>Prévoir également ici un texte permettant la prise de conscience de problèmes et les enjeux et renforcer cet aspect soit dans les cornerstones, soit dans des sous-pages, soit dans des articles de niveau 3</p>
-		<center><h3>Organiser avec le lean - Manager autrement - En savoir plus sur Anne-Laure Delpech</h3></center>
-		<center><h4>Que voulez-vous faire aujourd'hui ?</h4></center>
-		<p></p>
-		<center>
-		<a href="http://testal.parcours-performance.com/lean-management-amelioration-continue-guide/">
-			<img src="http://testal.parcours-performance.com/wp-content/uploads/2015/06/lean-amelioration-continue.png" style="height:240px; width:240px;">
-		</a>
-		<a href="http://testal.parcours-performance.com/mieux-manager-comment-devenir-un-meilleur-manageur/">
-			<img src="http://testal.parcours-performance.com/wp-content/uploads/2015/06/manager-mieux.png" style="height:240px; width:240px;">
-		</a>
-		<a href="http://testal.parcours-performance.com/anne-laure-delpech/">
-			<img src="http://testal.parcours-performance.com/wp-content/uploads/2015/06/a-propos.png" style="height:240px; width:240px;">
-		</a>
-		</center>
-		
+		<p>ici sera géré par une sidebar "before-front-page"</p>
+		<p>Prévoir ici un texte permettant la prise de conscience de problèmes et les enjeux et renforcer cet aspect soit dans les cornerstones, soit dans des sous-pages, soit dans des articles de niveau 3</p>
 	</section>
 	<!-- End featured area. -->
 
@@ -43,7 +21,7 @@ get_header(); // Loads the header.php template. ?>
 		<?php $loop = new WP_Query(
 			array(
 				'post_type' => 'post',
-				'posts_per_page' => 4,
+				'posts_per_page' => 8,
 				'tax_query' => array(
 					array(
 						'taxonomy' => 'post_format',
@@ -62,6 +40,7 @@ get_header(); // Loads the header.php template. ?>
 						'operator' => 'NOT IN'
 					)
 				),
+				'category__not_in'	=> '72', /* exclude category "AIDE" */
 				'post__not_in' => $do_not_duplicate
 			)
 		); ?>
@@ -71,19 +50,18 @@ get_header(); // Loads the header.php template. ?>
 			<div class="content-secondary">
 
 				<?php while ( $loop->have_posts() ) : $loop->the_post(); $do_not_duplicate[] = get_the_ID();  ?>
-
-					<article id="post-<?php the_ID(); ?>" class="<?php hybrid_entry_class(); ?>">
+	
+					<article id="post-<?php the_ID(); ?>" class="bloc-article <?php hybrid_entry_class(); ?>">
 
 							<?php if ( current_theme_supports( 'get-the-image' ) ) get_the_image( array( 'meta_key' => 'Thumbnail', 'size' => 'thumbnail' ) ); ?>
-
 							<header class="entry-header">
 								<?php echo apply_atomic_shortcode( 'entry_title', '[entry-title tag="h3"]' ); ?>
-								<?php echo apply_atomic_shortcode( 'entry_byline', '<div class="entry-byline">' . __( 'Publié le [entry-published] [entry-edit-link before=" | "]', 'unique' ) . '</div>' ); ?>
 							</header><!-- .entry-header -->
-
-							<div class="entry-summary">
-								<?php the_excerpt(); ?>
-							</div><!-- .entry-summary -->
+							<span class="entry-summary"><?php echo(get_the_excerpt()); ?></span>
+							<p class="entry-meta">
+								<?php echo apply_atomic_shortcode( 'entry_byline', '<span class="entry-byline">' . __( '[entry-published] [entry-edit-link before=" | "]', 'unique' ) . '</span>' ); ?>
+								<span class="categories"><?php the_category(', '); ?></span>
+							</p>
 
 					</article><!-- .hentry -->
 
