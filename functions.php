@@ -18,6 +18,9 @@ add_action( 'wp_enqueue_scripts', 'clea_parcours_p_enqueue_scripts' );
 
 /* Register and load styles. */
 add_action( 'wp_enqueue_scripts', 'clea_parcours_p_enqueue_styles', 4 ); 
+
+/* add a class to <a> elements followed by <img> element */
+add_action( 'wp_head', 'ald_add_class_to_element_with_nested_img' );
  
 function clea_parcours_p_enqueue_styles() {
 
@@ -44,6 +47,28 @@ function clea_parcours_p_enqueue_scripts() {
 	if ( is_page_template( 'page/pp-front-page-test1.php' ) ) {
 		wp_enqueue_script( 'jquery-masonry' );
 	}
+}
+
+/******************************************************************
+* add a class to <a> elements followed by <img> element
+* see the test here http://codepen.io/aldelpech/pen/jPoMeZ
+* 
+* so that a[target="_blank"]::after may have a specific icon 
+* while the same a[target="_blank"] with an <img> does not
+*
+******************************************************************/
+
+function ald_add_class_to_element_with_nested_img() { 
+
+		?>
+		<script>
+		jQuery(document).ready(function() {
+			jQuery("a:has(img)").addClass("img-inside");
+			jQuery("figure:has(a.img-inside)").addClass("external");
+		});
+		</script>
+		<?php 
+
 }
 
 ?>

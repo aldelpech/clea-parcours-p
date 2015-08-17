@@ -169,6 +169,10 @@ a.page-numbers:hover {
 * résultat sur http://testal.parcours-performance.com/test-mise-en-page/
 *******************************************************/
 
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+}
+
 h1, h2, h4, h6 {
     color: #fa5c5d;
 }
@@ -500,9 +504,16 @@ a:hover img, a:hover .avatar {
 	-o-animation: tada 1s;
 }
 
-/* identifier les liens qui renverront vers un autre onglet */
-a[target="_blank"]::after {
-content: "\f08e";  /* external-link */
+/*************************************************************
+* identifier les liens qui renverront vers un autre onglet 
+* 
+* <a> links with <imf> inside need to be styled differently
+* see my codepen test http://codepen.io/aldelpech/pen/jPoMeZ
+* code enqueued in functions.php of my child theme
+*************************************************************/
+
+.entry-content a[target="_blank"]::after {
+	content: "\f08e";  /* external-link */
     display: inline-block; 
     font-family: FontAwesome;
     font-size: 90%;
@@ -512,4 +523,27 @@ content: "\f08e";  /* external-link */
     text-align: right;
 }
 
+.entry-content a[target="_blank"].img-inside::after {
+    content: "";
+	display: inline-block; 
+}
 
+.entry-content a.img-inside img {
+    /* margin-bottom: -30px; */
+	padding: 0;
+}
+
+.entry-content a.img-inside img.alignleft,
+.entry-content a.img-inside img.alignright,
+.entry-content a.img-inside img.aligncenter {
+    margin-bottom: 0;
+}
+
+/* figure.external figcaption.wp-caption-text {
+    margin-top: 25px !important;
+}
+*/
+
+.alignnone, {
+	margin: 0 !important;
+}

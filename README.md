@@ -2,4 +2,7 @@
 ==========
 ## en cours d'ajustements importants
 
-* explications à créer
+## change log
+
+* link are styled differently whether they open in another tab or not
+* functions now contains a jquery script so that nested img in a will have a different class
