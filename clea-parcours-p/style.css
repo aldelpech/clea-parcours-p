@@ -76,22 +76,22 @@ body.custom-background {
 #menu-primary li:hover > a, 
 #menu-primary li.current-menu-item > a,
 #menu-secondary-has-children li a {
-	background-color: #fa5c5d ;
+	background-color: #660bab ;
 	text-decoration: none;
 	
 }
 
 /* élimine le background défectueux des menus avec enfants ! */
 #menu-secondary {
-	background: #fa5c5d !important ;
-	border: 1px solid #fa5c5d; 
+	background: #660bab !important ;
+	border: 1px solid #660bab; 
 }
 #menu-secondary li a:hover, 
 #menu-secondary li:hover >a, 
 #menu-secondary li a:active,
 #menu-secondary li.current-menu-item >a {
 	background: #f6f6eb !important ;
-	color: #fa5c5d;
+	color: #660bab;
 }
 /* FIN élimine le background défectueux des menus avec enfants ! */
 
@@ -101,14 +101,14 @@ body.custom-background {
 .page-numbers.current, 
 a.page-numbers:hover {
 	background-color: #ffcc00 ; 	/* secondary color */
-	color: #910101 !important; 		/* primary color */
+	color: #660bab !important; 		/* primary color */
 }
  
 .page-numbers, 
 .page-links a, 
 .loop-nav a {
 	background-color: #f6f6eb ; 	/* primary color */
-	color : #910101; 				/* secondary color */
+	color : #660bab; 				/* secondary color */
 }
 
 
@@ -121,7 +121,7 @@ a.page-numbers:hover {
 
 #sidebar-secondary .widget,
 #sidebar-primary .widget {
-	border: 2px solid #fa5c5d;
+	border: 2px solid #660bab;
     /* border-radius: 15px; */
     /* -webkit-border-radius: 15px; */
     /* -moz-border-radius: 15px; */
@@ -135,9 +135,9 @@ a.page-numbers:hover {
 #sidebar-primary .widget-title {
     padding: 5px;
     font-size: 1.125rem;
-    color: #fa5c5d;
+    color: #660bab;
     background: none;
-    border-bottom: 1px solid #fa5c5d;
+    border-bottom: 1px solid #660bab;
 	font-variant: small-caps;
     font-weight: 600;
     text-align: center;
@@ -147,14 +147,14 @@ a.page-numbers:hover {
 .widget-search input[type="text"] {
      color: #f6f6eb;
     background: #f6f6eb;
-    border: 2px solid #fa5c5d;
+    border: 2px solid #660bab;
 	border-right: none ;
 }
 
 .widget-search input[type="submit"] {
-    background-color: #fa5c5d;
+    background-color: #660bab;
 	height: 41px;
-   border: 2px solid #fa5c5d;
+   border: 2px solid #660bab;
 	border-left: none ;   
 }
 
@@ -174,7 +174,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2, h4, h6 {
-    color: #fa5c5d;
+    color: #660bab;
 }
 
 h1 {
@@ -209,8 +209,8 @@ blockquote{
 	font-family: 'Handlee', cursive;
   
 	/*Borders - (Optional)*/
-	border-left: 2px solid #fa5c5d;
-	border-right: 2px solid #fa5c5d;
+	border-left: 2px solid #660bab;
+	border-right: 2px solid #660bab;
   
 	/*Box Shadow - (Optional)*/
 	-moz-box-shadow: 2px 2px 15px #78909C;
@@ -225,7 +225,7 @@ blockquote::before{
 	font-family: FontAwesome;
     font-size: 25px;
     font-weight: normal;
-    color: #fa5c5d;
+    color: #660bab;
 	/*Positioning*/
     position: absolute;
     left: 10px;
@@ -247,10 +247,10 @@ blockquote cite {
     
 .pp-pullquote {
 	/*Borders - (Optional)*/
-	border-top: 2px solid #910101;
-	border-bottom: 2px solid #910101;
+	border-top: 2px solid #660bab;
+	border-bottom: 2px solid #660bab;
 	border-right: none !important;
-	color: #910101;
+	color: #660bab;
 	padding: 2% !important;
     font-size: 85%;
     line-height: 1.6;
@@ -269,7 +269,7 @@ blockquote cite {
 	font-family: FontAwesome;
     font-size: 25px;
     font-weight: normal;
-	color: #910101;
+	color: #660bab;
     margin-right: 5px;
     display: inline-block;
     -webkit-transition: all 300ms 0s ease-in-out;
@@ -299,7 +299,16 @@ tbody tr {
 }
 
 .entry-content a {
-    color: #fa5c5d !important;
+    color: #660bab !important;
+}
+
+.entry-content a:hover {
+    font-weight: 600;
+	font-variant: small-caps;
+}
+
+.entry-content a:visited {
+	color: #ffcc00 !important;
 }
 
 /* bullet points */
@@ -326,7 +335,7 @@ tbody tr {
   left: 0;
   font-family: FontAwesome;
   content: "\f138";  /* \f046  */
-  color: #fa5c5d;
+  color: #660bab;
 }
 
 /* same for nested lists */
@@ -346,7 +355,7 @@ tbody tr {
   left: 0;
   font-family: FontAwesome;
   content: "\f046";  /* \f138  */
-  color: #fa5c5d;
+  color: #660bab;
 }
 
 #content li li:first-child {	/*first li */
@@ -360,7 +369,7 @@ abbr[title], time[title], acronym[title] {
 /* Réglage des images */
 	figure {
 		padding: 5px ;
-		border: 1px solid #fa5c5d ;
+		border: 1px solid #660bab ;
 		border-radius: 10px;
 		-webkit-border-radius: 10px;
 		-moz-border-radius: 10px;
@@ -386,7 +395,7 @@ abbr[title], time[title], acronym[title] {
 	img.alignright,
 	img.aligncenter {
 		padding: 5px !important;
-		border: 1px solid #fa5c5d !important ;
+		border: 1px solid #660bab !important ;
 	}
 
 	figcaption {
@@ -398,7 +407,7 @@ abbr[title], time[title], acronym[title] {
 		margin: 0 !important;
 		padding: 0 !important;
 		opacity: 1 !important;
-		color: red !important;
+		color: #660bab !important;
 		font-size: 0.95rem !important;
 	}
 
@@ -436,11 +445,11 @@ abbr[title], time[title], acronym[title] {
 .pp-forward {
 	display: inline-block;
     background-color: #ffcc00;
-    color: #910101;
+    color: #660bab;
     border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
-    border: 3px solid #910101;
+    border: 3px solid #660bab;
     padding: 10px;
     margin-bottom: 10px;
     letter-spacing: 0.3px;
@@ -452,7 +461,7 @@ abbr[title], time[title], acronym[title] {
 	font-family: FontAwesome;
     font-size: 25px;
     font-weight: normal;
-	color: #910101 ;
+	color: #660bab ;
     margin-right: 5px;
 	padding: 1.5%;
 }
@@ -464,12 +473,12 @@ abbr[title], time[title], acronym[title] {
 
 .pp-alert {
 	display: inline-block;
-    background-color: rgba(250, 92, 93, 0.8);
-    color: #ffffff;
+    background-color: #660bab;
+    color: #f6f6eb ;
     border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
-    border: 3px solid #ffcc00;
+    border: 5px solid #ffcc00;
     padding: 10px;
     margin-bottom: 10px;
     letter-spacing: 0.3px;
@@ -481,7 +490,7 @@ abbr[title], time[title], acronym[title] {
 	font-family: FontAwesome;
     font-size: 25px;
     font-weight: normal;
-	color: #f6f6eb;
+	color: #f6f6eb ;
     margin-right: 5px;
 	padding: 1.5%;
 }
@@ -494,11 +503,11 @@ abbr[title], time[title], acronym[title] {
 .pp-comment {
 	display: inline-block;
     background-color: #f6f6eb;
-    color: #910101;
+    color: #660bab;
     border-radius: 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
-    border: 3px solid #ffcc00;
+    border: 3px solid #660bab;
     padding: 10px;
     margin-bottom: 10px;
     letter-spacing: 0.3px;
@@ -511,7 +520,7 @@ abbr[title], time[title], acronym[title] {
 	font-family: FontAwesome;
     font-size: 25px;
     font-weight: normal;
-	color: #910101;
+	color: #660bab;
     margin-right: 5px;
 	padding: 1.5%;
 }
@@ -522,8 +531,8 @@ abbr[title], time[title], acronym[title] {
 }
 
 hr {
-	background-color: #f6f6eb;
-    border-top: 3px dashed #fa5c5d ;
+	background-color: #ffcc00;
+    border-top: 3px dashed #660bab ;
 }
 
 
@@ -541,7 +550,7 @@ hr {
 		display: inline-block; 
 		font-family: FontAwesome;
 		font-size: 90%;
-		color: #fa5c5d;
+		color: #660bab;
 		text-decoration: underline;
 		width: 17px;
 		text-align: right;
@@ -563,7 +572,7 @@ hr {
 ***********************************************************/
 
 	.feature {
-		border: 2px red solid;
+		border: 2px #660bab solid;
 		height: 250px;
 		margin-bottom: 15px;
 		border-radius: 15px;
@@ -579,7 +588,7 @@ hr {
 		-moz-box-sizing: border-box;
 		-webkit-box-sizing: border-box;
 		box-shadow: 1px 1px 2px 0 #ccc;
-		border: 2px dotted #fa5c5d;
+		border: 2px dotted #660bab;
 		padding: 4px;
 		border-radius: 15px;
 		-moz-border-radius: 15px;
@@ -619,7 +628,7 @@ hr {
 	.bloc-article a img {
 		padding: 0; 
 		background: none; 
-		border: 1px solid #fa5c5d !important;
+		border: 1px solid #ffcc00 !important;
 	}
 
 	.bloc-article .entry-summary {
@@ -635,7 +644,7 @@ hr {
 
 	.bloc-article .entry-title a {
 		text-decoration: none;
-		color: #fa5c5d ;
+		color: #660bab ;
 		font-size: 85%;
 		padding: 0;
 	}
@@ -648,7 +657,7 @@ hr {
 	}
 
 	.bloc-article .categories {
-		background-color: #fa5c5d;
+		background-color:  #ffcc00;
 		border-radius: 15px 5px 5px 15px;
 		-moz-border-radius: 15px 5px 5px 15px;
 		-webkit-border-radius: 15px 5px 5px 15px;
@@ -658,7 +667,7 @@ hr {
 	}
 
 	.bloc-article .categories  a {
-		color: #f6f6eb;
+		color: #660bab;
 		font-size: 110%;
 		font-weight: 600 ;
 		text-decoration: none;
@@ -668,7 +677,7 @@ hr {
 	.bloc-article .categories a::after {
 		content: "\f061";
 		font-family: FontAwesome;
-		color: #f6f6eb;
+		color: #660bab;
 		margin-left: 6px;
 		margin-right: 0;;
 	}
@@ -676,7 +685,7 @@ hr {
 	.bloc-article .categories:hover,
 	.bloc-article .categories:hover a,
 	.bloc-article .categories:hover a::after {
-		color: #fa5c5d ;
+		color: #660bab ;
 		background-color: #f6f6eb;
 	}
 
@@ -696,7 +705,7 @@ hr {
 	   border-radius: 10px 50px 50px 10px;
 	   -moz-border-radius: 10px 50px 50px 10px;
 	   -webkit-border-radius: 10px 50px 50px 10px;
-	   background-color: #fa5c5d;
+	   background-color: #ffcc00;
 		vertical-align: bottom;
 		margin-right: 10px;
 	}
