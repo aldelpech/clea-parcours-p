@@ -167,15 +167,15 @@ a.page-numbers:hover {
 
 #sidebar-secondary .widget,
 #sidebar-primary .widget {
-	border: none;
-    border-radius: 15px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    padding: 8px;
-    margin-bottom: 8px;
-    background: #f6f6eb;
+    border-bottom: 2px solid #660bab;
+    padding: 20px 0;
+    margin: 0 8px;
 }
 
+#sidebar-secondary .widget:last-child,
+#sidebar-primary .widget:last-child {
+	border-bottom: none;
+}
 
 #sidebar-secondary .widget-title,
 #sidebar-primary .widget-title {
@@ -192,15 +192,13 @@ a.page-numbers:hover {
 
 .widget-search input[type="text"] {
      color: #f6f6eb;
-    background: #f6f6eb;
-    border: 2px solid #660bab;
+    border: 1px solid #660bab;
+    border-right: none;
 	border-right: none ;
 }
 
 .widget-search input[type="submit"] {
     background-color: #660bab;
-	height: 41px;
-   border: 2px solid #660bab;
 	border-left: none ;   
 }
 
@@ -210,9 +208,18 @@ a.page-numbers:hover {
 	color: #ffcc00;
 }
 
+aside#sidebar-primary {
+    margin-top: 45px;
+}
+
 /* subsidiary sidebar
 ****************************************/
-	
+
+/* so that all widget have SAME HEIGHT !!! */
+aside#sidebar-subsidiary {
+    display: flex;
+}
+
 #sidebar-subsidiary .widget {
 	border: 2px solid #660bab;
     padding: 2% 1%;
@@ -797,3 +804,89 @@ hr {
 	.home #content.hfeed {
 		border-top: none;
 	}
+	
+/* style the "garantie" widget in subsidiary sidebar */
+.image-holder {
+  position: relative;
+}
+
+.image-holder .text-content {
+	background: rgba(102, 11, 171, 0.5);
+	color: #ffcc00;
+	line-height: 40px;
+	text-align: center;
+	font-size: 24px;
+	
+	cursor: pointer;
+	display: inline-block;
+	height: 80px;
+	width: 240px;
+	position: absolute;
+	left: 25px;
+ 	top: 0;
+	/* do not display when not hover */
+	opacity: 0;
+}
+
+.image-holder:hover .text-content {
+  opacity: 1;
+}
+
+/* style the "Anne-Laure delpech" widget in primary sidebar */
+
+.image-holder .text-content-ald {
+	background: rgba(102, 11, 171, 0.5);
+	color: #ffcc00;
+	line-height: 40px;
+	text-align: center;
+	font-size: 24px;
+	
+	cursor: pointer;
+	display: inline-block;
+	height: 120px;
+	width: 300px;
+	position: absolute;
+	left: 5px;
+ 	top: 0;
+	/* do not display when not hover */
+	opacity: 0;
+}
+
+.image-holder:hover .text-content-ald {
+  opacity: 1;
+}
+
+/* style the "pre-diagnostic" widget in primary sidebar */
+h3.pre-diag{
+  text-align: center;
+}
+
+h4.pre-diag{
+  text-align: center;
+  font-style: italic;
+}
+
+h6.pre-diag{
+  text-align: center;
+  font-style: italic; 
+}
+
+p.pre-diag{
+  font-weight: 600;
+  text-align: center;
+}
+
+a.pre-diag {
+    width: 80%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #660bab;
+    color: #ffcc00;
+    line-height: 1.8;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    padding: 8px;
+    border-radius: 10px;
+}
