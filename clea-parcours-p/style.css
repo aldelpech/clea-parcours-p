@@ -217,7 +217,12 @@ aside#sidebar-primary {
 
 /* so that all widget have SAME HEIGHT !!! */
 aside#sidebar-subsidiary {
-    display: flex;
+	/* https://css-tricks.com/using-flexbox/ */
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 
 #sidebar-subsidiary .widget {
@@ -658,6 +663,11 @@ hr {
 /**********************************************************
 * Page d'accueil
 **********************************************************/
+.home .breadcrumb-trail {
+    display: none;
+}
+
+
 /***********************************************************
 * style featured area
 ***********************************************************/
@@ -888,5 +898,62 @@ a.pre-diag {
     font-weight: 600;
     text-align: center;
     padding: 8px;
-    border-radius: 10px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
 }
+
+/* style the "abonnez-vous" widget in primary sidebar */
+.mc-field-group label {
+    display: none;
+}
+
+.mc-field-group input {
+    color: #f6f6eb;
+    border: 1px solid #660bab;
+    width: 90%;
+    background: #f3f3f3;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+    box-sizing: border-box;
+    display: block;
+    margin-left: auto;
+	margin-right: auto;
+    margin-bottom: 8px;
+    padding: 5px;
+}
+
+input#mc-embedded-subscribe {
+    box-sizing: border-box;
+    width: 60%;
+    display: block;
+    margin-left: auto;
+	margin-right: auto;
+    background-color: #660bab;
+    color: #ffcc00;
+    font-weight: 600;
+    text-align: center;
+    padding: 8px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+p.home-subscribe {
+	font-size: 80%;
+    line-height: 1.1;
+    font-style: italic;
+    margin-top: 15px;
+    width: 90%;
+    text-align: center;
+    text-align: -webkit-center;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+p.mc-subscribe {
+    text-align: -webkit-center;
+    text-align: center;
+}
+
