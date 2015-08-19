@@ -13,15 +13,25 @@
  * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
 
-/* Register and load scripts. */
-add_action( 'wp_enqueue_scripts', 'clea_parcours_p_enqueue_scripts' );
+/* setup the child theme */ 
+add_action( 'after_setup_theme', 'clea_parcours_p_child_setup', 11 );
 
-/* Register and load styles. */
-add_action( 'wp_enqueue_scripts', 'clea_parcours_p_enqueue_styles', 4 ); 
+function clea_parcours_p_child_setup() {
+	/* Register and load scripts. */
+	add_action( 'wp_enqueue_scripts', 'clea_parcours_p_enqueue_scripts' );
 
-/* add a class to <a> elements followed by <img> element */
-add_action( 'wp_head', 'ald_add_class_to_element_with_nested_img' );
- 
+	/* Register and load styles. */
+	add_action( 'wp_enqueue_scripts', 'clea_parcours_p_enqueue_styles', 4 ); 
+
+	/* add a class to <a> elements followed by <img> element */
+	add_action( 'wp_head', 'clea_parcours_p_add_class_to_element_with_nested_img' );
+
+	add_action( 'widgets_init', 'clea_parcours_p_register_sidebars' );
+	
+
+	
+}
+
 function clea_parcours_p_enqueue_styles() {
 
 	// feuille de style pour l'impression
@@ -31,9 +41,9 @@ function clea_parcours_p_enqueue_styles() {
 		wp_enqueue_style( 'flexslider', get_template_directory_uri() . '/css/flexslider.css' , array( '25px' ) );
 	}
 	
-	if ( is_page_template( 'page/pp-front-page-test1.php' ) ) {
+	/* if ( is_page_template( 'page/pp-front-page-test1.php' ) ) {
 		wp_enqueue_style( 'test1-masonry', get_stylesheet_directory_uri() . '/css/test1.css' );
-	}
+	} */
 	
 }
 
@@ -44,9 +54,9 @@ function clea_parcours_p_enqueue_scripts() {
 		wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/js/flexslider/flexslider.min.js' , array( 'jquery' ), '20120713', true );
 	}
 	
-	if ( is_page_template( 'page/pp-front-page-test1.php' ) ) {
+	/* if ( is_page_template( 'page/pp-front-page-test1.php' ) ) {
 		wp_enqueue_script( 'jquery-masonry' );
-	}
+	} */
 }
 
 /******************************************************************
@@ -58,7 +68,7 @@ function clea_parcours_p_enqueue_scripts() {
 *
 ******************************************************************/
 
-function ald_add_class_to_element_with_nested_img() { 
+function clea_parcours_p_add_class_to_element_with_nested_img() { 
 
 		?>
 		<script>
@@ -70,5 +80,30 @@ function ald_add_class_to_element_with_nested_img() {
 		<?php 
 
 }
+
+/* register a before-front-page sidebar */
+function clea_parcours_p_register_sidebars() {
+	/* see http://justintadlock.com/archives/2010/11/08/sidebars-in-wordpress */
+	/* Register the 'primary' sidebar. */
+	register_sidebar(
+		array(
+			'id' => 'before-front-page',
+			'name' => __( "Avant le contenu de page d'accueil" ),
+			'description' => __( 'Pour insérer un contenu juste sous le menu' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		)
+	);
+	
+	/* Now you just create a sidebar-new-name.php template
+	* and use it somewhere with 
+	* <?php get_sidebar( 'new-name' ); // Loads the sidebar-new-name.php template. ?>
+	*/
+	
+}
+
+
 
 ?>

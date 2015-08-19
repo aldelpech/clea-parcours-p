@@ -7,6 +7,11 @@ $do_not_duplicate = array();
  
 get_header(); // Loads the header.php template. ?>
 
+	<!--  begin sidebar-before-front-page area -->
+	
+	<?php get_sidebar( 'before-front-page' ); // Loads the sidebar-before-front-page.php template. ?>
+	
+	<!--  end  sidebar-before-front-page area -->
 	<!-- Begin featured area. --->
 	<section class="feature">
 		<p>ici sera géré par une sidebar "before-front-page"</p>
