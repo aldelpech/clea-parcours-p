@@ -246,6 +246,40 @@ aside#sidebar-subsidiary {
     text-align: -webkit-center;
 }
 
+/* before-front-page sidebar
+****************************************/
+
+/* so that all widget have SAME HEIGHT !!! */
+aside#sidebar-before-front-page {
+	/* https://css-tricks.com/using-flexbox/ */
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+#sidebar-before-front-page .widget {
+	border: 2px solid #660bab;
+    padding: 2% 1%;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+	margin: 5px;
+}
+
+
+#sidebar-before-front-page .widget-title {
+    padding: 5px;
+    font-size: 1.125rem;
+    color: #660bab;
+    background: none;
+    border-bottom: 1px dotted #ffcc00;
+	font-variant: small-caps;
+    font-weight: 600;
+    text-align: center;
+    text-align: -webkit-center;
+}
 
 /*******************************************************
 * mise en page 

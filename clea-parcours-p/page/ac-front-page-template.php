@@ -12,13 +12,6 @@ get_header(); // Loads the header.php template. ?>
 	<?php get_sidebar( 'before-front-page' ); // Loads the sidebar-before-front-page.php template. ?>
 	
 	<!--  end  sidebar-before-front-page area -->
-	<!-- Begin featured area. --->
-	<section class="feature">
-		<p>ici sera géré par une sidebar "before-front-page"</p>
-		<p>Prévoir ici un texte permettant la prise de conscience de problèmes et les enjeux et renforcer cet aspect soit dans les cornerstones, soit dans des sous-pages, soit dans des articles de niveau 3</p>
-	</section>
-	<!-- End featured area. -->
-
 	
 	<div id="content" class="hfeed">
 	<h2>Les derniers articles du blog</h2>
@@ -56,19 +49,7 @@ get_header(); // Loads the header.php template. ?>
 
 				<?php while ( $loop->have_posts() ) : $loop->the_post(); $do_not_duplicate[] = get_the_ID();  ?>
 	
-					<article id="post-<?php the_ID(); ?>" class="bloc-article <?php hybrid_entry_class(); ?>">
-
-							<?php if ( current_theme_supports( 'get-the-image' ) ) get_the_image( array( 'meta_key' => 'Thumbnail', 'size' => 'thumbnail' ) ); ?>
-							<header class="entry-header">
-								<?php echo apply_atomic_shortcode( 'entry_title', '[entry-title tag="h3"]' ); ?>
-							</header><!-- .entry-header -->
-							<span class="entry-summary"><?php echo(get_the_excerpt()); ?></span>
-							<p class="entry-meta">
-								<?php echo apply_atomic_shortcode( 'entry_byline', '<span class="entry-byline">' . __( '[entry-published] [entry-edit-link before=" | "]', 'unique' ) . '</span>' ); ?>
-								<span class="categories"><?php the_category(', '); ?></span>
-							</p>
-
-					</article><!-- .hentry -->
+					<?php get_template_part( 'content', ( post_type_supports( get_post_type(), 'post-formats' ) ? get_post_format() : get_post_type() ) ); ?>
 
 				<?php endwhile; ?>
 
