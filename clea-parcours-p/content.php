@@ -23,12 +23,15 @@
 		<header class="entry-header">
 			<?php echo apply_atomic_shortcode( 'entry_title', '[entry-title tag="h3"]' ); ?>
 		</header><!-- .entry-header -->
-		<span class="entry-summary"><?php echo(get_the_excerpt()); ?></span>
-		<a class="read-more" href="<?php get_permalink( get_the_ID() ); ?>">Lire la suite</a>
+
+		<span class="entry-summary"><?php echo(get_the_excerpt()); ?> 
+		<a class="read-more" href="<?php the_permalink(); ?>">Lire L'article</a></span>
+
 		<p class="entry-meta">
 			<?php echo apply_atomic_shortcode( 'entry_byline', '<span class="entry-byline">' . __( '[entry-published] [entry-edit-link before=" | "]', 'unique' ) . '</span>' ); ?>
 			<span class="categories"><?php the_category(', '); ?></span>
 		</p>
 	</article><!-- .hentry -->
 	<?php } ?>
+
 
