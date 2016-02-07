@@ -24,8 +24,7 @@
 			<?php echo apply_atomic_shortcode( 'entry_title', '[entry-title tag="h3"]' ); ?>
 		</header><!-- .entry-header -->
 
-		<span class="entry-summary"><?php echo(get_the_excerpt()); ?> 
-		<a class="read-more" href="<?php the_permalink(); ?>">Lire L'article</a></span>
+		<span class="entry-summary"><?php the_excerpt() ; ?> </span>
 
 		<p class="entry-meta">
 			<?php echo apply_atomic_shortcode( 'entry_byline', '<span class="entry-byline">' . __( '[entry-published] [entry-edit-link before=" | "]', 'unique' ) . '</span>' ); ?>

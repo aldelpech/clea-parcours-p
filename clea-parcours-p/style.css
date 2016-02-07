@@ -1059,3 +1059,7 @@ aside#sidebar-before-front-page .row .row-item {
 footer#footer {
     background-color: transparent;
 }
+
+a.read-more {
+    font-variant: small-caps;
+}
