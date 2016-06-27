@@ -16,6 +16,10 @@
 /* setup the child theme */ 
 add_action( 'after_setup_theme', 'clea_parcours_p_child_setup', 11 );
 
+/* support thumbnails for LearnDash contents */ 
+add_action( 'init', 'clea_learndash_featured_thumbnail' );
+
+
 function clea_parcours_p_child_setup() {
 	/* Register and load scripts. */
 	add_action( 'wp_enqueue_scripts', 'clea_parcours_p_enqueue_scripts' );
@@ -34,7 +38,21 @@ function clea_parcours_p_child_setup() {
 
 	# Change Read More link in automatic Excerpts
 	remove_filter('get_the_excerpt', 'wp_trim_excerpt');
-	add_filter('get_the_excerpt', 'wpse_custom_wp_trim_excerpt');	
+	add_filter('get_the_excerpt', 'wpse_custom_wp_trim_excerpt');
+
+	add_theme_support( 'post-thumbnails' ); 	
+}
+
+function clea_learndash_featured_thumbnail() {
+	add_theme_support( 'post-thumbnails', array( 
+		'sfwd-certificates', 
+		'sfwd-courses', 
+		'sfwd-lessons', 
+		'sfwd-topic', 
+		'sfwd-quiz', 
+		'sfwd-assignment', 
+		'sfwd-essays' ) 
+	);
 }
 
 function clea_parcours_p_enqueue_styles() {
