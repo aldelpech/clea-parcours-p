@@ -19,7 +19,6 @@ add_action( 'after_setup_theme', 'clea_parcours_p_child_setup', 11 );
 /* support thumbnails for LearnDash contents */ 
 add_action( 'init', 'clea_learndash_featured_thumbnail' );
 
-
 function clea_parcours_p_child_setup() {
 	/* Register and load scripts. */
 	add_action( 'wp_enqueue_scripts', 'clea_parcours_p_enqueue_scripts' );
@@ -132,7 +131,7 @@ function clea_parcours_p_featuredtoRSS( $content ) {
 	
 	global $post;
 	if ( has_post_thumbnail( $post->ID ) ){
-		$content = '<div>' . get_the_post_thumbnail( $post->ID, 'thumbnail', array( 'style' => 'margin-bottom: 15px;' ) ) . '</div>' . $content;
+		$content = '<div>' . get_the_post_thumbnail( $post->ID, 'thumbnail', array( 'style' => 'margin-bottom: 15px; margin-right: 15px; float: left;' ) ) . '</div>' . $content;
 	}
 	
 	return $content;
@@ -213,6 +212,7 @@ if ( ! function_exists( 'wpse_custom_wp_trim_excerpt' ) ) :
     }
   
 endif;  
+
 
 
 ?>
